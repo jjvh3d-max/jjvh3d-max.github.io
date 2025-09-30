@@ -28,7 +28,7 @@
 	background: var(--dark-bg);
 	color: var(--text-light);
 	overflow-x: hidden;
-	top: auto;
+	top: inherit;
         }
 
         /* Cabecera */
@@ -108,7 +108,7 @@
             top: 100%;
             left: 0;
             background: var(--card-bg);
-            border-radius: 12px;
+            border-radius: 6px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             opacity: 0;
             visibility: hidden;
@@ -188,18 +188,19 @@
 
         /* Videos de Ejemplo */
         .videos-section {
-	padding: 4rem 2%;
+	padding: 1rem 1%;
 	background: var(--darker-bg);
         }
 
         .section-title {
 	text-align: center;
-	font-size: 2.5rem;
-	margin-bottom: 2rem;
+	font-size: 1.5rem;
+	margin-bottom: 0rem;
 	background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+	vertical-align: middle;
         }
 
         .videos-grid {
@@ -286,11 +287,11 @@
         }
 
         .member-image img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            background: var(--card-bg);
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+	background: var(--card-bg);
         }
 
         .member-info h3 {
@@ -411,56 +412,21 @@
                     </div>
                 </li>
                 <li><button class="dropdown-btn">Equipo</button></li>
-      <li><button class="dropdown-btn">Contacto</button></li></ul></div>
-</header>
+      <li><button class="dropdown-btn">Contact</button></li></ul></div></header>
 
 <!-- Sección Principal -->
 <section class="hero">
         <div>
           <h1>&nbsp;</h1>
           <h1><a href="https://telefonicacorp.sharepoint.com/sites/Colabora_TIS/SOP_GLOBAL/SitePages/Inicio.aspx?OR=Teams-HL&CT=1638369420215" target="_top"><br>
-  <img src="images/demo/backgrounds/Cbz014.png" alt="tis2" width="917" height="212"></a><!-- Videos de Ejemplo -->    </h1>
+          <img src="images/demo/backgrounds/Cbz014.png" alt="tis2" width="917" height="212"></a><!-- Videos de Ejemplo -->    </h1>
     </div>
     </section>
 <section class="videos-section">
-  <h2 class="section-title">PROYECTOS DESTACADOS      </h2>
-      <p>&nbsp;</p>
-      
-      
-       
-        
-        
-        <div class="video-container">
-            <video controls poster="https://placehold.co/400x275/0a0a1a/0ff?text=NEODRAFT+STUDIO">
-                <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
-                Tu navegador no soporta la reproducción de video.
-            </video>
-        </div>
-        
-        
-        
-        
-</section>
-
-
-
-
-
-
-
-
-<!-- Services Section -->
-<section class="services" id="servicios">
-        <h2 class="section-title">SERVICIOS AVANZADOS</h2>
-  <div class="services-grid">
-            <div class="service-card">
-                <h3>-----------------------------</h3>
-      </div>
-    </div>
-    </section>
-  <section class="projects">
-    <!-- Proyecto 1 -->
-    <div class="project-card">
+  <h2 class="section-title">SOPORTE DOCUMENTAL</h2></section>
+<section class="projects">
+  <!-- Proyecto 1 -->
+  <div class="project-card">
       <div class="video-wrapper">
         <video muted autoplay loop>
           <source src="video/Centro Control Seguridad Integral Distrito c2.mp4" type="video/mp4">
@@ -608,12 +574,12 @@
     }
 
     /* === Responsive === */
-    @media (max-width: 768px) {
+    @media (max-width: 300px) {
       .projects {
         gap: 1.5rem;
       }
       .project-card {
-        width: 90%;
+        width: 30%;
       }
       h1 {
         font-size: 2.5rem;
@@ -623,7 +589,7 @@
         </video>
       </div>
       <div class="card-content">
-        <h3>Planta Industrial 4.0</h3>
+        <h3>Diseño 3D</h3>
         <p>Delineación técnica de una fábrica inteligente con integración de IoT y automatización robótica.</p>
         <a href="#" class="btn">Ver proyecto</a>
       </div>
@@ -638,22 +604,22 @@
         </video>
       </div>
       <div class="card-content">
-        <h3>Infraestructura Urbana</h3>
+        <h3>Simulaciones 3D</h3>
         <p>Modelado 3D y planos técnicos para el rediseño de zonas metropolitanas sostenibles.</p>
         <a href="#" class="btn">Ver proyecto</a>
-      </div>
+      <a href="video/Electrical Panel .mp4">Electrical Panel </a></div>
     </div>
 
     <!-- Proyecto 3 -->
     <div class="project-card">
       <div class="video-wrapper">
         <video muted autoplay loop>
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-interface-animations-1420-large.mp4" type="video/mp4">
+          <source src="video/Electrical Panel .mp4" type="video/mp4">
           Tu navegador no soporta video HTML5.
         </video>
       </div>
       <div class="card-content">
-        <h3>Prototipo Aeroespacial</h3>
+        <h3>Diseño Mecánico</h3>
         <p>Diseño detallado de componentes para vehículos de lanzamiento reutilizables.</p>
         <a href="#" class="btn">Ver proyecto</a>
       </div>
@@ -661,7 +627,7 @@
 </section>
 
   <footer>
-    <p>© 2025 NeoLine Studio — Innovación en delineación técnica y visualización avanzada</p>
+    <p>© 2025 -Innovación en delineación técnica y visualización avanzada</p>
   </footer>
 
           <!-- end .content -->
@@ -677,7 +643,7 @@
             <div class="video-card">
               <div class="video-placeholder">
                     <i class="fas fa-shield-alt"></i>
-                </div>
+              </div>
                 <div class="video-info">
                   <h3>Sistema de Seguridad Inteligente</h3>
                     <p>Diseño integral de seguridad perimetral con integración de IA y sensores biométricos para instalaciones de alto nivel.</p>
@@ -686,7 +652,7 @@
             <div class="video-card">
               <div class="video-placeholder">
                     <i class="fas fa-building"></i>
-                </div>
+              </div>
                 <div class="video-info">
                     <h3>Torre Corporativa Neo</h3>
                     <p>Modelado 3D avanzado y planos técnicos para rascacielos sostenible con sistemas de energía renovable integrados.</p>
@@ -695,7 +661,7 @@
             <div class="video-card">
               <div class="video-placeholder">
                     <i class="fas fa-industry"></i>
-                </div>
+              </div>
                 <div class="video-info">
                     <h3>Planta Industrial Automatizada</h3>
                     <p>Diseño técnico de maquinaria y layout de planta con simulación de flujo de producción y optimización logística.</p>
@@ -704,16 +670,45 @@
         </div>
     </section>
 
-    <!-- Equipo -->
+
+
+
+
+
+
+
+
+
+
+<div class="video-container">
+  <video controls poster="images/0ff2.png" width="300" height="206">
+    <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video. </video>
+  <video controls poster="images/0ff2.png" width="300" height="206">
+                <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+            
+            
+            
+        <video controls poster="images/0ff2.png" width="300" height="206">
+          <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video. </video>
+  <video controls poster="images/0ff2.png" width="300" height="206">
+          <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de video. </video>
+</div>
+
+<!-- Equipo -->
     <section class="team-section">
         <h2 class="section-title">NUESTRO EQUIPO</h2>
         <div class="team-grid">
             <div class="team-member">
                 <div class="member-image">
-                    <img src="https://placehold.co/180x180/121225/00f0ff?text=AR" alt="Arquitecto">
+                    <img src="images/0ff2.png" alt="Arquitecto" width="300" height="206">
                 </div>
                 <div class="member-info">
-                    <h3>Alex Rivera</h3>
+                    <h3>David Castro</h3>
                     <p>Director Creativo</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
@@ -727,7 +722,7 @@
                     <img src="https://placehold.co/180x180/121225/b967ff?text=JS" alt="Ingeniero">
                 </div>
                 <div class="member-info">
-                    <h3>Sofía Martínez</h3>
+                    <h3>Silvia Molina</h3>
                     <p>Ingeniera de Seguridad</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
@@ -738,10 +733,10 @@
             </div>
             <div class="team-member">
                 <div class="member-image">
-                    <img src="https://placehold.co/180x180/121225/ff2a6d?text=TC" alt="Técnico">
+                    <img src="images/0ff3.png" alt="Técnico">
                 </div>
                 <div class="member-info">
-                    <h3>Carlos Vega</h3>
+                    <h3>Julian Varona</h3>
                     <p>Técnico Especialista</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
@@ -755,7 +750,7 @@
                     <img src="https://placehold.co/180x180/121225/00f0ff?text=DL" alt="Delineante">
                 </div>
                 <div class="member-info">
-                    <h3>Laura Gómez</h3>
+                    <h3>Carlos Hernanz</h3>
                     <p>Directora de Proyectos</p>
                     <div class="social-links">
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
