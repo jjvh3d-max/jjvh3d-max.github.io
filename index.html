@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
+    margin-top: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-bottom: 3px;
     padding: 0;
     box-sizing: border-box;
         }
@@ -34,16 +34,17 @@
 
         /* Cabecera - pegada al top */
         header {
-            background: rgba(10, 10, 20, 0.95);
-            backdrop-filter: blur(10px);
-            height: 60px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(10px);
+    height: 60px;
+    position: fixed;
+    top: -18px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
+    bottom: 33px;
         }
 
         .nav-container {
@@ -68,7 +69,8 @@
         }
 
         .dropdown {
-            position: relative;
+    position: relative;
+    width: 100%;
         }
 
         .dropdown-btn {
@@ -274,13 +276,12 @@
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 15px rgba(0, 238, 255, 0.4), 0 15px 35px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.4), 0 15px 35px rgba(0, 0, 0, 0.7);
         }
 
         .video-wrapper {
     position: relative;
-    width: 100%;
+    width: 300%;
     height: 400px;
     background: #000;
         }
@@ -386,14 +387,14 @@
         }
 
         .member-image {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            border: 3px solid transparent;
-            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
-            padding: 3px;
-            position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    border: 3px solid transparent;
+    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+    padding: 3px;
+    position: static;
         }
 
         .member-image img {
@@ -514,25 +515,26 @@
                 padding: 1rem;
             }
         }
+    .social-links1 {            display: flex;
+            justify-content: center;
+            gap: 1rem;
+}
+.team-grid1 {            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+}
     </style>
 </head>
 <body>
 <!-- Cabecera - pegada al top de la página -->
 <header>
     <div class="nav-container">
-        <div class="logo"><img src="images/Imag_TIS/Logo_Tis2.png" alt="NeoDeline Logo"></div>
+      <div class="logo"><img src="images/Imag_TIS/Logo_Tis2.png" alt="NeoDeline Logo"></div>
         <ul class="nav-menu">
             <li class="dropdown">
-                <button class="dropdown-btn">Servicios <i class="fas fa-chevron-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="#seguridad">Sistemas de Seguridad</a>
-                    <a href="#arquitectura">Diseño Arquitectónico</a>
-                    <a href="#tecnico">Diseño Técnico</a>
-                    <a href="#industrial">Diseño Industrial</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <button class="dropdown-btn">Proyectos <i class="fas fa-chevron-down"></i></button>
+                <button class="dropdown-btn">Proyectos</button>
                 <div class="dropdown-content">
                     <a href="#residencial">Residencial</a>
                     <a href="#comercial">Comercial</a>
@@ -540,21 +542,55 @@
                     <a href="#infraestructura">Infraestructura</a>
                 </div>
             </li>
-            <li><a href="#equipo" class="dropdown-btn">Equipo</a></li>
-            <li><a href="#contacto" class="dropdown-btn">Contacto</a></li>
+            <li class="dropdown">
+                <button class="dropdown-btn">Proyectos</button>
+                <div class="dropdown-content">
+                    <a href="#residencial">Residencial</a>
+                    <a href="#comercial">Comercial</a>
+                    <a href="#industrial">Industrial</a>
+                    <a href="#infraestructura">Infraestructura</a>
+                </div>
+            </li>
+             <li class="dropdown">
+                <button class="dropdown-btn">Proyectos</button>
+                <div class="dropdown-content">
+                    <a href="#residencial">Residencial</a>
+                    <a href="#comercial">Comercial</a>
+                    <a href="#industrial">Industrial</a>
+                    <a href="#infraestructura">Infraestructura</a>
+                </div>
+            </li>
+             <li class="dropdown">
+                <button class="dropdown-btn">Proyectos</button>
+                <div class="dropdown-content">
+                    <a href="#residencial">Residencial</a>
+                    <a href="#comercial">Comercial</a>
+                    <a href="#industrial">Industrial</a>
+                    <a href="#infraestructura">Infraestructura</a>
+                </div>
+            </li>
         </ul>
     </div>
 </header>
 
 <!-- Sección Principal - exactamente 5px de distancia desde el header -->
 <section class="projects" id="proyectos">
-    <video muted="muted" autoplay="autoplay" loop="loop" >
-      <source src="images/demo/backgrounds/FondoCabzB.mp4" type="video/mp4">
-    </video>
-    <h2 class="section-title">&nbsp;</h2>
-    <h2 class="section-title">PROYECTOS DESTACADOS</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1200px; margin: 0 auto;">
-        <!-- Proyecto 1 -->
+  <div class="dropdown">
+    <div class="team-grid1">
+      <div class="team-member">
+        <div class="member-info">
+          <p>&nbsp;</p>
+          <video muted="muted" autoplay="autoplay" loop="loop" >
+            <source src="images/demo/backgrounds/FondoCabzB.mp4" type="video/mp4">
+          </video>
+          <div class="social-links1"> <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> <a href="#" class="social-link"><i class="fas fa-envelope"></i></a> </div>
+        </div>
+      </div>
+    </div>
+    <p>&nbsp;</p>
+  </div>
+  <h2 class="section-title">PROYECTOS DESTACADOS</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1200px; margin: 0 auto;"><!-- Proyecto 1 -->
         <div class="project-card">
             <div class="video-wrapper">
                 <div class="video-placeholder">
