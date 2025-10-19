@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
-    margin-top: 3px;
-    margin-right: 3px;
-    margin-left: 3px;
-    margin-bottom: 3px;
-    padding: 0;
-    box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         :root {
@@ -34,17 +31,16 @@
 
         /* Cabecera - pegada al top */
         header {
-    background: rgba(10, 10, 20, 0.95);
-    backdrop-filter: blur(10px);
-    height: 60px;
-    position: fixed;
-    top: -18px;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0, 240, 255, 0.2);
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
-    bottom: 33px;
+            background: rgba(10, 10, 20, 0.95);
+            backdrop-filter: blur(10px);
+            height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.1);
         }
 
         .nav-container {
@@ -69,8 +65,7 @@
         }
 
         .dropdown {
-    position: relative;
-    width: 100%;
+            position: relative;
         }
 
         .dropdown-btn {
@@ -142,17 +137,23 @@
             transform: translateX(5px);
         }
 
-        /* Sección Principal - 5px de distancia desde el header */
+        /* Main content spacing */
+        main {
+            margin-top: 70px; /* Header height + spacing */
+        }
+
+        /* Hero Section */
         .hero {
-    height: calc(100vh - 65px); /* 60px header + 5px espacio */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
     overflow: hidden;
-    padding: 0 2%;
-    margin-top: 10px; /* 60px header + 5px espacio exacto */
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-bottom: 0;
+    min-height: calc(3vh - 70px);
         }
 
         .hero::before {
@@ -201,13 +202,13 @@
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
         }
 
         .videos-grid {
@@ -276,14 +277,15 @@
         }
 
         .project-card:hover {
-    box-shadow: 0 0 15px rgba(0, 238, 255, 0.4), 0 15px 35px rgba(0, 0, 0, 0.7);
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px rgba(0, 238, 255, 0.4), 0 15px 35px rgba(0, 0, 0, 0.7);
         }
 
         .video-wrapper {
-    position: relative;
-    width: 300%;
-    height: 400px;
-    background: #000;
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background: #000;
         }
 
         .video-wrapper video {
@@ -293,7 +295,7 @@
         }
 
         .card-content {
-            padding: 1rem;
+            padding: 1.5rem;
         }
 
         .card-content h3 {
@@ -351,16 +353,14 @@
             gap: 1rem;
             padding: 2rem;
             flex-wrap: wrap;
+            background: var(--darker-bg);
         }
 
-        .video-container .video-placeholder {
+        .video-container video {
             width: 300px;
             height: 206px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(45deg, #1a1a2e, #16213e);
             border-radius: 8px;
+            background: linear-gradient(45deg, #1a1a2e, #16213e);
         }
 
         /* Equipo */
@@ -387,14 +387,13 @@
         }
 
         .member-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    margin: 0 auto 1.5rem;
-    border: 3px solid transparent;
-    background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
-    padding: 3px;
-    position: static;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 3px solid transparent;
+            background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+            padding: 3px;
         }
 
         .member-image img {
@@ -485,9 +484,7 @@
             }
             
             .hero {
-                margin-top: 65px;
-                height: auto;
-                min-height: calc(100vh - 65px);
+                min-height: calc(100vh - 70px);
             }
         }
 
@@ -510,28 +507,18 @@
                 align-items: center;
             }
             
-            .hero {
-                margin-top: 65px;
-                padding: 1rem;
+            .video-container video {
+                width: 100%;
+                max-width: 300px;
             }
         }
-    .social-links1 {            display: flex;
-            justify-content: center;
-            gap: 1rem;
-}
-.team-grid1 {            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-}
     </style>
 </head>
 <body>
 <!-- Cabecera - pegada al top de la página -->
 <header>
     <div class="nav-container">
-      <div class="logo"><img src="images/Imag_TIS/Logo_Tis2.png" alt="NeoDeline Logo"></div>
+        <div class="logo"><img src="images/Imag_TIS/Logo_Tis2.png" alt="NeoDeline Logo"></div>
         <ul class="nav-menu">
             <li class="dropdown">
                 <button class="dropdown-btn">Proyectos</button>
@@ -543,378 +530,174 @@
                 </div>
             </li>
             <li class="dropdown">
-                <button class="dropdown-btn">Proyectos</button>
+                <button class="dropdown-btn">Servicios</button>
                 <div class="dropdown-content">
-                    <a href="#residencial">Residencial</a>
-                    <a href="#comercial">Comercial</a>
-                    <a href="#industrial">Industrial</a>
-                    <a href="#infraestructura">Infraestructura</a>
+                    <a href="#diseño">Diseño 3D</a>
+                    <a href="#simulacion">Simulaciones</a>
+                    <a href="#mecanico">Diseño Mecánico</a>
                 </div>
             </li>
-             <li class="dropdown">
-                <button class="dropdown-btn">Proyectos</button>
+            <li class="dropdown">
+                <button class="dropdown-btn">Equipo</button>
                 <div class="dropdown-content">
-                    <a href="#residencial">Residencial</a>
-                    <a href="#comercial">Comercial</a>
-                    <a href="#industrial">Industrial</a>
-                    <a href="#infraestructura">Infraestructura</a>
-                </div>
-            </li>
-             <li class="dropdown">
-                <button class="dropdown-btn">Proyectos</button>
-                <div class="dropdown-content">
-                    <a href="#residencial">Residencial</a>
-                    <a href="#comercial">Comercial</a>
-                    <a href="#industrial">Industrial</a>
-                    <a href="#infraestructura">Infraestructura</a>
+                    <a href="#equipo">Nuestro Equipo</a>
+                    <a href="#contacto">Contacto</a>
                 </div>
             </li>
         </ul>
     </div>
 </header>
 
-<!-- Sección Principal - exactamente 5px de distancia desde el header -->
-<section class="projects" id="proyectos">
-  <div class="dropdown">
-    <div class="team-grid1">
-      <div class="team-member">
-        <div class="member-info">
-          <p>&nbsp;</p>
-          <video muted="muted" autoplay="autoplay" loop="loop" >
-            <source src="images/demo/backgrounds/FondoCabzB.mp4" type="video/mp4">
-          </video>
-          <div class="social-links1"> <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> <a href="#" class="social-link"><i class="fas fa-envelope"></i></a> </div>
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h3>&nbsp;</h3>
+                <p>&nbsp;</p>
+                <video muted="muted" autoplay="autoplay" loop="loop" >
+                  <source src="images/demo/backgrounds/FondoCabzB.mp4" type="video/mp4">
+                </video>
+                <p>&nbsp;</p>
+                <p>Estudio de Delineación Futurista - Innovación en visualización técnica y diseño avanzado</p>
+            </div>
         </div>
+    </section>
+
+    <!-- Proyectos Destacados -->
+    <section class="projects" id="proyectos">
+      <h2 class="section-title">PROYECTOS DESTACADOS</h2>
+      <p>&nbsp;</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1200px; margin: 0 auto;">
+            <!-- Proyecto 1 -->
+            <div class="project-card">
+                <div class="video-wrapper">
+                  <video muted autoplay loop>
+                    <source src="video/Centro Control Seguridad Integral Distrito c2.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="card-content">
+                    <h3>Diseño 3D</h3>
+                    <p>Delineación técnica de una fábrica inteligente con integración de IoT y automatización robótica.</p>
+                    <a href="#" class="btn">Ver proyecto</a>
+                </div>
+          </div>
+
+            <!-- Proyecto 2 -->
+            <div class="project-card">
+                <div class="video-wrapper">
+                    <video muted autoplay loop>
+                        <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
+                        Tu navegador no soporta video HTML5.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Simulaciones 3D</h3>
+                    <p>Modelado 3D y planos técnicos para el rediseño de zonas metropolitanas sostenibles.</p>
+                    <a href="#" class="btn">Ver proyecto</a>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="project-card">
+                <div class="video-wrapper">
+                    <video muted autoplay loop>
+                        <source src="video/Electrical Panel .mp4" type="video/mp4">
+                        Tu navegador no soporta video HTML5.
+                    </video>
+                </div>
+                <div class="card-content">
+                    <h3>Diseño Mecánico</h3>
+                    <p>Diseño detallado de componentes para vehículos de lanzamiento reutilizables.</p>
+                    <a href="#" class="btn">Ver proyecto</a>
+                </div>
+            </div>
       </div>
-    </div>
-    <p>&nbsp;</p>
-  </div>
-  <h2 class="section-title">PROYECTOS DESTACADOS</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1200px; margin: 0 auto;"><!-- Proyecto 1 -->
-        <div class="project-card">
-            <div class="video-wrapper">
-                <div class="video-placeholder">
-                    <i class="fas fa-cube"></i>
-                </div>
-            </div>
-            <div class="card-content">
-                <h3>Diseño 3D</h3>
-                <p>Delineación técnica de una fábrica inteligente con integración de IoT y automatización robótica.</p>
-                <a href="#" class="btn">Ver proyecto</a>
-            </div>
-        </div>
+  </section>
 
-        <!-- Proyecto 2 -->
-        <div class="project-card">
-            <div class="video-wrapper">
-                <div class="video-placeholder">
-                    <i class="fas fa-city"></i>
-                </div>
-            </div>
-            <div class="card-content">
-                <h3>Simulaciones 3D</h3>
-                <p>Modelado 3D y planos técnicos para el rediseño de zonas metropolitanas sostenibles.</p>
-                <a href="#" class="btn">Ver proyecto</a>
-            </div>
-        </div>
-
-        <!-- Proyecto 3 -->
-        <div class="project-card">
-            <div class="video-wrapper">
-                <div class="video-placeholder">
-                    <i class="fas fa-industry"></i>
-                </div>
-            </div>
-            <div class="card-content">
-                <h3>Diseño Mecánico</h3>
-                <p>Diseño detallado de componentes para vehículos de lanzamiento reutilizables.</p>
-                <a href="#" class="btn">Ver proyecto</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Soporte Documental -->
-<section class="projects">
-  <!-- Proyecto 1 -->
-  <div class="project-card">
-      <div class="video-wrapper">
-        <video muted autoplay loop>
-          <source src="video/Centro Control Seguridad Integral Distrito c2.mp4" type="video/mp4">
-          Tu navegador no soporta video HTML5.
-          <style>
-    /* === Estilos Globales === */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --bg-dark: #0a0a14;
-      --text-light: #e0f7fa;
-      --accent-neon: #00eeff;
-      --card-bg: #121220;
-      --shadow-neon: 0 0 15px rgba(0, 238, 255, 0.4);
-    }
-
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, rgba(10,10,20,0.9), rgba(20,20,40,0.9));
-      border-bottom: 1px solid rgba(0, 238, 255, 0.2);
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      background: linear-gradient(to right, var(--accent-neon), #00aaff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: 2px;
-    }
-
-    .subtitle {
-      font-size: 1.2rem;
-      opacity: 0.1;
-    }
-
-    /* === Sección de Proyectos === */
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2.5rem;
-      padding: 3rem 2rem;
-    }
-
-    .project-card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      overflow: hidden;
-      width: 340px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-neon), 0 15px 35px rgba(0, 0, 0, 0.7);
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      height: 200px;
-      background: #000;
-    }
-
-    .video-wrapper video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 1.5rem;
-    }
-
-    .card-content h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
-      color: var(--accent-neon);
-    }
-
-    .card-content p {
-      font-size: 0.95rem;
-      opacity: 0.85;
-      margin-bottom: 1.2rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.8rem 1.6rem;
-      background: transparent;
-      color: var(--accent-neon);
-      border: 2px solid var(--accent-neon);
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(0, 238, 255, 0.2), transparent);
-      transition: left 0.6s ease;
-    }
-
-    .btn:hover {
-      background: rgba(0, 238, 255, 0.1);
-      box-shadow: var(--shadow-neon);
-    }
-
-    .btn:hover::before {
-      left: 100%;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: rgba(224, 247, 250, 0.5);
-      font-size: 0.9rem;
-      border-top: 1px solid rgba(0, 238, 255, 0.1);
-    }
-
-    /* === Responsive === */
-    @media (max-width: 300px) {
-      .projects {
-        gap: 1.5rem;
-      }
-      .project-card {
-        width: 30%;
-      }
-      h1 {
-        font-size: 2.5rem;
-      }
-    }
-          </style>
+    <!-- Videos Container -->
+    <div class="video-container">
+        <video controls poster="images/0ff2.png">
+            <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
         </video>
-      </div>
-      <div class="card-content">
-        <h3>Diseño 3D</h3>
-        <p>Delineación técnica de una fábrica inteligente con integración de IoT y automatización robótica.</p>
-        <a href="#" class="btn">Ver proyecto</a>
-      </div>
-    </div>
-
-    <!-- Proyecto 2 -->
-    <div class="project-card">
-      <div class="video-wrapper">
-        <video muted autoplay loop>
-          <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
-          Tu navegador no soporta video HTML5.
+        <video controls poster="images/0ff2.png">
+            <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
         </video>
-      </div>
-      <div class="card-content">
-        <h3>Simulaciones 3D</h3>
-        <p>Modelado 3D y planos técnicos para el rediseño de zonas metropolitanas sostenibles.</p>
-        <a href="#" class="btn">Ver proyecto</a>
-      <a href="video/Electrical Panel .mp4">Electrical Panel </a></div>
-    </div>
-
-    <!-- Proyecto 3 -->
-    <div class="project-card">
-      <div class="video-wrapper">
-        <video muted autoplay loop>
-          <source src="video/Electrical Panel .mp4" type="video/mp4">
-          Tu navegador no soporta video HTML5.
+        <video controls poster="images/0ff2.png">
+            <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
         </video>
-      </div>
-      <div class="card-content">
-        <h3>Diseño Mecánico</h3>
-        <p>Diseño detallado de componentes para vehículos de lanzamiento reutilizables.</p>
-        <a href="#" class="btn">Ver proyecto</a>
-      </div>
+        <video controls poster="images/0ff2.png">
+            <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+        </video>
     </div>
-</section>
 
-<!-- Videos Container -->
-<div class="video-container">
-  <video controls poster="images/0ff2.png" width="300" height="206">
-    <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de video. </video>
-  <video controls poster="images/0ff2.png" width="300" height="206">
-    <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
-          Tu navegador no soporta la reproducción de video. </video>
-  <video controls poster="images/0ff2.png" width="300" height="206">
-          <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
-          Tu navegador no soporta la reproducción de video. </video>
-  <video controls poster="images/0ff2.png" width="300" height="206">
-    <source src="video/estudio coberturas CCTV2.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de video. </video>
-</div>
-
-<!-- Equipo -->
-<section class="team-section" id="equipo">
-    <h2 class="section-title">NUESTRO EQUIPO</h2>
-    <div class="team-grid">
-        <div class="team-member">
-            <div class="member-image">
-                <img src="https://placehold.co/180x180/121225/00f0ff?text=DC" alt="David Castro">
+    <!-- Equipo -->
+    <section class="team-section" id="equipo">
+        <h2 class="section-title">NUESTRO EQUIPO</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://placehold.co/180x180/121225/00f0ff?text=DC" alt="David Castro">
+                </div>
+                <div class="member-info">
+                    <h3>David Castro</h3>
+                    <p>Director Creativo</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
             </div>
-            <div class="member-info">
-                <h3>David Castro</h3>
-                <p>Director Creativo</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://placehold.co/180x180/121225/b967ff?text=SM" alt="Silvia Molina">
+                </div>
+                <div class="member-info">
+                    <h3>Silvia Molina</h3>
+                    <p>Ingeniera de Seguridad</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://placehold.co/180x180/121225/ff2a6d?text=JV" alt="Julian Varona">
+                </div>
+                <div class="member-info">
+                    <h3>Julian Varona</h3>
+                    <p>Técnico Especialista</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://placehold.co/180x180/121225/00f0ff?text=CH" alt="Carlos Hernanz">
+                </div>
+                <div class="member-info">
+                    <h3>Carlos Hernanz</h3>
+                    <p>Directora de Proyectos</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="team-member">
-            <div class="member-image">
-                <img src="https://placehold.co/180x180/121225/b967ff?text=SM" alt="Silvia Molina">
-            </div>
-            <div class="member-info">
-                <h3>Silvia Molina</h3>
-                <p>Ingeniera de Seguridad</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="team-member">
-            <div class="member-image">
-                <img src="https://placehold.co/180x180/121225/ff2a6d?text=JV" alt="Julian Varona">
-            </div>
-            <div class="member-info">
-                <h3>Julian Varona</h3>
-                <p>Técnico Especialista</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="team-member">
-            <div class="member-image">
-                <img src="https://placehold.co/180x180/121225/00f0ff?text=CH" alt="Carlos Hernanz">
-            </div>
-            <div class="member-info">
-                <h3>Carlos Hernanz</h3>
-                <p>Directora de Proyectos</p>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+</main>
 
 <footer>
     <p>© 2025 NeoDeline - Innovación en delineación técnica y visualización avanzada</p>
@@ -928,7 +711,7 @@
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 window.scrollTo({
-                    top: target.offsetTop - 60,
+                    top: target.offsetTop - 70,
                     behavior: 'smooth'
                 });
             }
